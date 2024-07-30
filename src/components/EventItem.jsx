@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { color } from 'framer-motion';
+ 
 import React from 'react'
 
 const EventItem = ({info}) => {

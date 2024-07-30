@@ -56,6 +56,23 @@ const Calendar = () => {
             setEvents(newEvents);
         }
     };
+    
+    
+
+    const handleEventDrop = (event) => {
+        const updatedEvent = {
+          id: event.id,
+          title: event.title,
+          start: event.start,
+          end: event.end,
+        };
+        const updatedEvents = events.map((e) => (e.id === event.id ? updatedEvent : e));
+        console.log(updatedEvent)
+        localStorage.setItem('events', JSON.stringify(updatedEvents));
+        setEvents(updatedEvents);
+      };
+
+    
 
   return (
        <>
@@ -66,7 +83,7 @@ const Calendar = () => {
             <div className="mb-4 text-lg text-gray-700">To delete an event, click on the event.</div>
             <div className="text-lg text-gray-700">To drag an event, pick up the event.</div>
         </div>
-         
+        
         <FullCalendar
             editable
             selectable
@@ -76,6 +93,7 @@ const Calendar = () => {
             initialView={"dayGridMonth"}
             eventContent={(info) => <EventItem info={info} />}
             eventClick={(info) => handleEventDelete(info.event)}
+            eventDrop={(info) => handleEventDrop(info.event)} // Handle event drop
             height={"90vh"}
         />
        </>

@@ -61,6 +61,7 @@ const Calendar = () => {
        <>
         <h1>Monthly Calendar</h1>
         <div className="p-6 bg-gray-100 border border-gray-300 rounded-lg">
+            <div className="mb-4 text-lg text-gray-700">Only for Desktop.</div>
             <div className="mb-4 text-lg text-gray-700">To create an event, click on a date.</div>
             <div className="mb-4 text-lg text-gray-700">To delete an event, click on the event.</div>
             <div className="text-lg text-gray-700">To drag an event, pick up the event.</div>
